@@ -1,14 +1,22 @@
 {
-  "name": "thirdapp",
+  "name": "third",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "json-server --watch public/db.json --port 8000",
+    "client": "npm start",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
